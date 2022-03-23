@@ -17,18 +17,23 @@ public class ButtonPanel extends JPanel{
 	
 	ButtonPanel(){
 		this.setPreferredSize(new Dimension(400,60));
+		this.setBackground(new Color(255,236,196));
 		
 		addTask = new JButton("Add Task");
 		addTask.setBorder(emptyBorder);
 		addTask.setFont(new Font("°íµñ",Font.PLAIN,20));
-		
 		this.add(addTask);
+		addTask.setBackground(new Color(235,216,196));
+		addTask.setPreferredSize(new Dimension(100,30));
+
 		
 		this.add(Box.createHorizontalStrut(20));
 		clear = new JButton("Clear");
 		clear.setBorder(emptyBorder);
 		clear.setFont(new Font("°íµñ",Font.PLAIN,20));
 		this.add(clear);
+		clear.setBackground(new Color(235,216,196));
+		clear.setPreferredSize(new Dimension(100,30));
 		
 	}
 	
