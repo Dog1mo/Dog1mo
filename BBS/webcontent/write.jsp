@@ -1,9 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.io.PrintWriter"%>
-<%@ page import="bbs.BbsDAO"%>
-<%@ page import="bbs.Bbs"%>
-<%@ page import="java.util.ArrayList"%>
 
 <!DOCTYPE html>
 <html>
@@ -18,10 +15,6 @@
 	String userID = null;
 	if (session.getAttribute("userID") != null) {
 		userID = (String) session.getAttribute("userID");
-	}
-	int pageNumber = 1;
-	if(request.getParameter("pageNumber") != null){
-		pageNumber = Integer.parseInt(request.getParameter("pageNumber"));
 	}
 	%>
 
@@ -74,35 +67,29 @@
 	</nav>
 	<div class="container">
 		<div class="row">
-			<table class="table table-striped"
-				style="text-align: center; border: 1px solid #dddddd">
-				<thead>
-					<tr>
-						<th style="background-color: #eeeeee; text-align: center;">번호</th>
-						<th style="background-color: #eeeeee; text-align: center;">제목</th>
-						<th style="background-color: #eeeeee; text-align: center;">작성자</th>
-						<th style="background-color: #eeeeee; text-align: center;">작성일</th>
-					</tr>
-				</thead>
-				<tbody>
-				<% 
-				BbsDAO bbsDAO = new BbsDAO();
-				ArrayList<Bbs> list = bbsDAO.getList(pageNumber);
-				for(int i = 0; i < list.size(); i++){
-					%>
-				<tr>
-				<td><%= list.get(i).getBbsID() %></td>
-				<td><a href="view.jsp?bbsID=<%=list.get(i).getBbsID() %>"><%= list.get(i).getBbsTitle() %></a></td>
-				<td><%= list.get(i).getUserID() %></td>
-				<td><%= list.get(i).getBbsDate().subString(0, 11) + list.get(i).getBbsDate().subString(11, 13) + "시" + list.get(i).getBbstDate().subString(14, 16) + "분" %></td>
-				</tr>
-					<%
-				}
-				%>
-				
-				</tbody>
-			</table>
-			<a href="write.jsp" class="btn btn-primary pull-right">글쓰기</a>
+			<form method="post" action="writeAction.jsp">
+				<table class="table table-striped"
+					style="text-align: center; border: 1px solid #dddddd">
+					<thead>
+						<tr>
+							<th colspan="2"
+								style="background-color: #eeeeee; text-align: center;">게시판
+								글쓰기 양식</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><input type="text" class="form-control"
+								placeholder="글 제목" name="bbsTitle" maxlength="50"></td>
+						</tr>
+						<tr>
+							<td><textarea class="form-control" placeholder="글 내용"
+									name="bbsContent" maxlength="2048" style="height: 350px;"></textarea></td>
+						</tr>
+					</tbody>
+				</table>
+				<input type="submit" class="btn btn-primary pull-right" value="글쓰기">
+			</form>
 		</div>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
