@@ -8,6 +8,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=divice-width" , initial-scale="1">
 <link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/custom.css">
 <title>JSP 게시판 웹 사이트</title>
 </head>
 <body>
@@ -65,7 +66,48 @@ if (session.getAttribute("userID") != null){
 
 		</div>
 	</nav>
+	<div class="container">
+		<div class="jumbotron">
+			<div class="container">
+				<h1>웹 사이트 소개</h1>
+				<p>안녕하세요.</p> <p>이 웹사이트는 최소한으로 간단한 로직만을 이용하여 개발했습니다.</p> <p>감사합니다.</p>
+				<p><a class="btn btn-primary btn-pull" href="bbs.jsp" role="button">게시판</a></p>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		 <div id="myCarousel" class="carousel slide" data-ride="carousel">
+		 	<ol class="carousel-indicators">
+		 		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+		 		<li data-target="#myCarousel" data-slide-to="1"></li>
+		 		<li data-target="#myCarousel" data-slide-to="2"></li>
+		 	</ol>
+		 	<div class="carousel-inner" style="display: block;">
 
+		 		<div class="item active">
+		 			<img src="images/1.png"
+		 			style="display: block; margin: 0 auto; width:500px; height:500px;"
+		 			>
+		 		</div>
+		 		<div class="item">
+		 			<img src="images/2.png"
+		 			style="display: block; margin: 0 auto; width:500px; height:500px;"
+		 			>
+		 		</div>
+		 		<div class="item">
+		 			<img src="images/3.png"
+		 			style="display: block; margin: 0 auto; width:500px; height:500px;"
+		 			>
+		 		</div>
+		 	</div>
+		 	<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+		 	 	<span class="glyphicon glyphicon-chevron-left"></span>
+		 	</a>
+		 	<a class="right carousel-control" href="#myCarousel" data-slide="next">
+		 	 	<span class="glyphicon glyphicon-chevron-right"></span>
+		 	</a>
+		 </div>	
+	</div>
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="js/bootstrap.js"></script>
 </body>

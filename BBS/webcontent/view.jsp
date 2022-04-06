@@ -10,6 +10,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=divice-width" , initial-scale="1">
 <link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/custom.css">
+
 <title>JSP 게시판 웹 사이트</title>
 </head>
 <body>
@@ -81,8 +83,7 @@
 	</nav>
 	<div class="container">
 		<div class="row">
-			<table class="table table-striped"
-				style="text-align: center; border: 1px solid #dddddd">
+			<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
 				<thead>
 					<tr>
 						<th colspan="3"
@@ -106,7 +107,9 @@
 					</tr>
 					<tr>
 						<td>내용</td>
-						<td colspan="2" style="in-height: 200px; text-align: center"><%=bbs.getBbsContent().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %></td>
+						<td colspan="2" style="in-height: 200px; text-align: center">
+						<%=bbs.getBbsContent().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>")%>
+						</td>
 					</tr>
 				</tbody>
 			</table>
@@ -115,7 +118,7 @@
 			if (userID != null && userID.equals(bbs.getUserID())) {
 			%>
 			<a href="update.jsp?bbsID=<%=bbsID%>" class="btn btn-primary">수정</a>
-			<a href="deleteAction.jsp?bbsID=<%=bbsID%>" class="btn btn-primary">삭제</a>
+			<a onclick="return confirm('정말로 삭제하시겠습니까?')" href="deleteAction.jsp?bbsID=<%=bbsID%>" class="btn btn-primary">삭제</a>
 			<%
 			}
 			%>

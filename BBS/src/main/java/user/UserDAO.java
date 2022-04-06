@@ -13,9 +13,9 @@ public class UserDAO {
 
 	public UserDAO() {
 		try {
-			String dbURL = "jdbc:mysql://localhost:3306/BBS";
-			String dbID = "root";
-			String dbPassword = "Zoflrxj321*";
+			String dbURL = "jdbc:mysql://localhost/dpodpo?useSSL=false";//도메인 구입시 주소 변경
+			String dbID = "dpodpo";
+			String dbPassword = "tncjf131519";
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
 

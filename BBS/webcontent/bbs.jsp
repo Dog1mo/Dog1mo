@@ -11,6 +11,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=divice-width" , initial-scale="1">
 <link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/custom.css">
+
 <title>JSP 게시판 웹 사이트</title>
 <style type="text/css">
 a, a:hover {
