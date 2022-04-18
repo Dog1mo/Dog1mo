@@ -13,7 +13,7 @@ public class AppFrame extends JFrame{
 
 	private JButton addTask;
 	private JButton clear;
-
+//
 	AppFrame(){
 		this.setSize(400,700);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
